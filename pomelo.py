@@ -60,9 +60,10 @@ def is_drug_name_match_2(drug: str, test_input: str):
     for idx, num in enumerate(test_input):
         letters = mapping[num]
         # loop through 'mapping' key value, compare letters to current drug name char
-        list_letter = [l for l in letters if drug[idx] == l]
-        if len(list_letter) >= 1:
-            return True
+        # list_letter = [l for l in letters if drug[idx] == l]
+        for l in letters:
+            if drug[idx] == l:
+                return True
         else:
             return False
 
